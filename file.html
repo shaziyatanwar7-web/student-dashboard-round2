@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="app.js" defer></script>
+  <header><h1>Student Dashboard</h1></header>
+  <main>
+    <section class="card">
+      <h2>Add a student</h2>
+      <form id="addForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" autocomplete="off">
+          <small class="error" id="nameErr"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="off">
+          <small class="error" id="emailErr"></small>
+        </div>
+        <div class="field">
+          <label for="course">Course</label>
+          <input id="course" type="text" autocomplete="off">
+          <small class="error" id="courseErr"></small>
+        </div>
+        <button type="submit">Add student</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search by name or course" aria-label="Search students">
+        <p id="status" aria-live="polite"></p>
+      </div>
+      <div id="notice" class="notice" hidden></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Name</th><th>Course</th><th>Email</th><th>Action</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty" hidden></p>
+    </section>
+  </main>
+
+  <dialog id="confirmDlg">
+    <p id="confirmText"></p>
+    <div class="dlg-actions">
+      <button id="cancelBtn" class="secondary" type="button">Cancel</button>
+      <button id="okBtn" class="danger" type="button">Delete</button>
+    </div>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
